@@ -19,10 +19,10 @@
    <bottom>
       <FlowPane alignment="CENTER" hgap="10.0" prefHeight="40.0" prefWidth="480.0" vgap="10.0" BorderPane.alignment="CENTER">
          <children>
-                <Button onAction="#onLoadClicked" prefWidth="118.0" text="Load Image" />
+            <Button onAction="#onLoadClicked" prefWidth="118.0" text="Load Image" />
             <Label fx:id="filepath" text="Label" />
             <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" disable="true" text="Button" />
          </children>
          <BorderPane.margin>
             <Insets />

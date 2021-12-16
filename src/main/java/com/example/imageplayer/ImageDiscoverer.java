@@ -12,9 +12,9 @@ public class ImageDiscoverer {
 
     public ImageDiscoverer(Image img) {
         this.srcImage = img;
-        this.with = (int)srcImage.getWidth();
-        this.height = (int)srcImage.getHeight();
-        destImage = new WritableImage(with,height);
+        this.with = (int) srcImage.getWidth();
+        this.height = (int) srcImage.getHeight();
+        destImage = new WritableImage(with, height);
         initPixels();
     }
 
@@ -22,23 +22,23 @@ public class ImageDiscoverer {
         for (int row = 0; row < height; row++) {
             for (int column = 0; column < with; column++) {
                 Color c = Color.rgb(
-                        (int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255), 0.5
+                        (int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255), 0.5
                 );
-                destImage.getPixelWriter().setColor(column,row,c);
+                destImage.getPixelWriter().setColor(column, row, c);
             }
         }
     }
 
-    public void discoverImage(){
+    public void discoverImage() {
         for (int row = 0; row < height; row++) {
             for (int column = 0; column < with; column++) {
                 Color c = srcImage.getPixelReader().getColor(row, column);
-                destImage.getPixelWriter().setColor(column,row,c);
+                destImage.getPixelWriter().setColor(column, row, c);
             }
         }
     }
 
-    public Image getDestinationImage(){
+    public Image getDestinationImage() {
         return destImage;
     }
 }
